@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body {
+				color: green;
+				text-align: center;
+				font-size: 24px;
+				line-height: 3;
+				margin: 0;
+			}
+			.navbar {
+				overflow: hidden;
+				background-color: #333;
+				position: fixed;
+				top: 0;
+				width: 100%;
+			}
+			.navbar a {
+				float: left;
+				display: block;
+				color: #f2f2f2;
+				text-align: center;
+				padding: 14px 16px;
+				text-decoration: none;
+				font-size: 17px;
+			}
+			.navbar a:hover {
+				background: #ddd;
+				color: black;
+			}
+			.topnav-right {
+				float: right;
+			}
+			.main {
+				padding: 6px;
+				margin-top: 30px;
+				height: 150px;
+			}
+			.gr_header { grid-area: header;}
+			.gr_footer { grid-area: footer;}
+			.gr_left { grid-area: left; background: white}
+			.gr_right { grid-area: right; background: white;}
+			.gr {
+				display: grid;
+				grid-template-areas: "header header"
+										"left right"
+									"footer footer";
+				grid-template-columns: 300px 1fr;
+				grid-template-rows: 100px
+									1fr
+									100px;
+				min-height: 100vh;
+			}
+			@media screen and (max-width: 600px) {
+				.gr {
+					grid-template-areas: "header"
+										"left"
+										"right"
+										"footer";
+					grid-template-columns: 100%;
+					grid-template-rows: 100px
+										300px
+										1fr
+										30px;
+				}
+			}
+		</style>
+	</head>
+	<body class="gr">
+		<div class="navbar">
+			<a href="#home">SITENAME</a>
+			<div class="topnav-right">
+				<a href="../flexgrid.html">CSS Flex</a>
+			</div>
+		</div>
+		<div class="gr_left">
+			<h1>Header 1</h1>
+			<h6>Header 2</h6>
+		</div>
+		<div class="gr_right">
+			<img src="../images/2.gif"></img>
+			<p><img src="../images/1.gif"></img></p>
+			<p>---------------------------------------------------------------------------</p>
+		</div>
+	</body>
+</html>
